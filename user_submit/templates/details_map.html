@@ -1,0 +1,55 @@
+<!-- begin scripts -->
+<script type="text/javascript">
+
+    $(document).ready(function(){
+		writeMap();
+	});
+
+	function writeMap() {
+
+    	/*
+    	map icons from
+    	Maps Icons Collection
+    	http://mapicons.nicolasmollet.com
+    	Creative Commons 3.0 BY-SA
+    	Author : Nicolas Mollet
+    	*/
+
+		var crimeIcon = new google.maps.MarkerImage('/static/images/crime_incident.png');
+
+        var latlng = new google.maps.LatLng({{ issue.latitude }}, {{ issue.longitude }});
+
+		var myOptions = {
+			zoom: 15,
+			center: latlng,
+            scrollwheel: false,
+            draggable: true,
+            mapTypeControl: false,
+            navigationControl: true,
+            streetViewControl: false,
+            panControl: false,
+            scaleControl: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL,
+                position: google.maps.ControlPosition.RIGHT_TOP}
+            };
+
+		var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+
+        var marker = new google.maps.Marker({
+            position: latlng,
+            map: map,
+            icon: crimeIcon,
+            title: '{{ issue.user_date_submitted }}' + ' \n' + '{{ issue.user_request_type }}'
+        });
+
+	}
+</script>
+<!-- end  scripts -->
+
+<!-- write map -->
+<div id="map-display">
+<div id="map_canvas"></div>
+</div>
+<!-- end map -->

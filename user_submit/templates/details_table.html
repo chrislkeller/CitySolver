@@ -1,0 +1,42 @@
+{% extends "issues_base.html" %}
+
+<title>{% block title %} {{ issue.user_request_type }} | CityCite {% endblock %}</title>
+
+{% block description %}
+<meta name="description" content="{{ issue.user_request_type }}" />
+{% endblock %}
+
+{% block keywords %}
+<meta name="keywords" content=">{{ issue.user_request_type }},Madison Wis." />
+{% endblock %}
+
+{% block content %}
+
+{% block page-header %}
+<div class="page-headers">
+<h1>{{ issue.user_request_type }}</h1>
+</div>
+{% endblock page-header %}
+
+{% include "details_map.html" %}
+
+<!-- begin issue_details -->
+<div class="issue_details">
+
+<!-- begin issue details type -->
+<p>Incident reported at {{ issue.computed_address }} by {{ issue.user_first_name }} {{ issue.user_last_name }} on {{ issue.user_date_submitted }}</p>
+
+{% if not issue.user_message %}
+    <p>No details offered.</p>
+
+{% else %}
+    <p><strong>Details:</strong> {{ issue.user_message }}</p>
+{% endif %}
+
+<div class="submitted_image"><img src="{{ issue.user_submitted_photo.url }}" width="165%" /></div>
+<!-- end issue details type -->
+
+</div>
+<!-- end incident content -->
+
+{% endblock content %}

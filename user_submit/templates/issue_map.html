@@ -1,0 +1,93 @@
+<!-- begin scripts -->
+<script type="text/javascript">
+
+// called from include
+
+    $(document).ready(function(){
+		writeMap();
+		closeDialog ();
+		});
+
+	function writeMap() {
+
+    	var infowindow;
+    	var infoWindowContent = '';
+
+    	/*
+    	map icons from
+    	Maps Icons Collection
+    	http://mapicons.nicolasmollet.com
+    	Creative Commons 3.0 BY-SA
+    	Author : Nicolas Mollet
+    	*/
+
+		var crimeIcon = new google.maps.MarkerImage('/static/images/crime_incident.png');
+
+		var myOptions = {
+			zoom: 11,
+			center: new google.maps.LatLng(43.0730517, -89.4012302),
+            scrollwheel: false,
+            draggable: true,
+            mapTypeControl: false,
+            navigationControl: false,
+            streetViewControl: false,
+            panControl: false,
+            scaleControl: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL,
+                position: google.maps.ControlPosition.RIGHT_TOP}
+            };
+
+		var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
+
+		{% for addr in issue_listing %}
+
+            var latlng = new google.maps.LatLng({{ addr.latitude }}, {{ addr.longitude }});
+
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                icon: crimeIcon,
+                title: '{{ addr.user_date_submitted }}: {{ addr.user_request_type }}'
+                });
+
+            google.maps.event.addListener(marker, 'click', function() {
+
+				$('#popupContent').modal('show');
+
+				$('#popupIncident').html('<h3><a href="#">{{ addr.user_request_type }}</a></h4>');
+
+				$('#popupDetails').html(
+				    '<p><strong>Date: </strong>{{ addr.user_date_submitted }}</p>' +
+				    '<p><strong>Location: </strong>{{ addr.computed_address }}</p>');
+
+				$('#popupLinks').html(
+				    '<a href="/issues/{{ addr.id }}" class="btn btn-primary">View Details</a>' +
+				    '<a href="#" class="btn secondary" onclick="closeDialog ();">Close</a>');
+
+			});
+
+		{% endfor %}
+
+	}
+
+	function closeDialog () {
+		$('#popupContent').modal('hide');
+	};
+	</script>
+<!-- end  scripts -->
+
+	<!-- write map -->
+	<div id="map-display">
+		<div id="map_canvas"></div>
+	</div>
+	<!-- end map -->
+
+	<!-- begin modal box -->
+	<div id="popupContent" class="modal hide fade in">
+	   <div id="popupIncident" class="modal-header"></div>
+	   <div id="popupDetails" class="modal-body"></div>
+	   <div id="popupLinks" class="modal-footer"></div>
+    </div>
+<!-- end modal box -->

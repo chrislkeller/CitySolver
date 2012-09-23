@@ -1,0 +1,108 @@
+{% extends "issues_base.html" %}
+
+<title>{% block title %}Latest Issues | CityCite{% endblock %}</title>
+
+{% block description %}
+<meta name="description" content="" />
+{% endblock %}
+
+{% block keywords %}
+<meta name="keywords" content="" />
+{% endblock %}
+
+{% block google %}
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noodp" />
+{% endblock %}
+
+{% block content %}
+
+{% block page-header %}
+	<div class="page-headers">
+		<h1>Latest Issues</h1>
+		<h4>See a problem, let your neighbors know.</h4>
+	</div>
+{% endblock page-header %}
+
+{% if issue_listing %}
+
+{% include "issue_map.html" %}
+
+<span class="visible-phone">
+	<!-- begin table -->
+	<table id="incident-table" class="sortable table table-striped table-bordered table-condensed">
+		<thead>
+			<tr>
+				<th class="sorted">Date</th>
+				<th class="sorted">Request</th>
+				<th class="sorted">Image</th>
+				<th class="sorttable_nosort">Details</th>
+			</tr>
+		</thead>
+		<tbody>
+
+{% for issue in issue_listing %}
+		<tr>
+			<td>{{ issue.user_date_submitted }}</td>
+			<td>{{ issue.user_request_type }}</td>
+
+{% if not issue.user_submitted_photo %}
+            <td></td>
+
+{% else %}
+            <td><div class="submitted_image"><img src="{{ issue.user_submitted_photo.url }}" /></div></td>
+{% endif %}
+
+        <td valign="center"><a class="centered btn btn-primary" href="/issues/{{ issue.id }}">View</a></td>
+		</tr>
+
+{% endfor %}
+
+        </tbody>
+	</table>
+	<!-- end table -->
+</span>
+
+<span class="visible-desktop">
+	<!-- begin table -->
+	<table id="incident-table" class="sortable table table-striped table-bordered table-condensed">
+		<thead>
+			<tr>
+				<th class="sorted">Date</th>
+				<th class="sorted">Request</th>
+				<th class="sorted">Address</th>
+				<th class="sorted">Image</th>
+				<th class="sorttable_nosort">Details</th>
+			</tr>
+		</thead>
+		<tbody>
+
+{% for issue in issue_listing %}
+		<tr>
+			<td>{{ issue.user_date_submitted }}</td>
+			<td>{{ issue.user_request_type }}</td>
+			<td>{{ issue.computed_address }}</td>
+
+{% if not issue.user_submitted_photo %}
+            <td></td>
+
+{% else %}
+            <td><img src="{{ issue.user_submitted_photo.url }}" width="90px" /></td>
+{% endif %}
+
+        <td valign="center"><a class="centered btn btn-primary" href="/issues/{{ issue.id }}">View</a></td>
+		</tr>
+
+{% endfor %}
+
+        </tbody>
+	</table>
+	<!-- end table -->
+</span>
+
+{% else %}
+<div class="incident-content">
+	<h3>No Issues to report</h3>
+</div>
+{% endif %}
+
+{% endblock content %}

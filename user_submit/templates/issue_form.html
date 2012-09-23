@@ -1,0 +1,42 @@
+{% extends "issues_base.html" %}
+
+<title>{% block title %} {{ issue.user_request_type }} | CityCite {% endblock %}</title>
+
+{% block description %}
+<meta name="description" content="{{ issue.user_request_type }}" />
+{% endblock %}
+
+{% block keywords %}
+<meta name="keywords" content=">{{ issue.user_request_type }},Madison Wis." />
+{% endblock %}
+
+{% block content %}
+
+{% block page-header %}
+<div class="page-headers">
+<h1>Submit an issue for review</h1>
+</div>
+{% endblock page-header %}
+
+<!-- begin issue_details -->
+<div id="submit_form">
+
+<form enctype='multipart/form-data' method='post' action='.'>
+<table id="incident-table" class="table table-striped table-bordered table-condensed">
+
+{% csrf_token %}
+
+{{issue_form}}
+
+</table>
+
+<div id="footer-buttons">
+<input class="btn btn-danger" type="submit" value="Submit Form"/>
+</div>
+
+</form>
+
+</div>
+<!-- end incident content -->
+
+{% endblock content %}
