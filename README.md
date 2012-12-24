@@ -4,6 +4,8 @@ Back in September I had the chance to participate in an event called  Build Madi
 
 At the event, myself and Paul Klemstine and another took up the challenge of building on a pitch to come up with a way to submit quality of life issues -- graffiti, potholes, sidewalks in need of repair -- to the city of Madison from a mobile device. Pictures were a must, as was the ability to add a user's location.
 
+![CitySolver](http://www.projects.chrislkeller.com/images/city_solver/city_solver_incident.png)
+
 Oh, and the Build Madison pitch positioned this project as something that would tie in with the city's existing "Report a Problem" infrastructure.
 
 So Paul and I were able to come up with a really fun hacking project for a weekend that could aspire to be more -- an open-source See, Click, Fix anyone -- or left to lessons learned, of which there were many that apply to many things I find myself involved in on a daily basis.
@@ -57,7 +59,3 @@ A rating system is Phase One of furthering the platform to allow neighborhood re
 >- Full screen map with geolocation to find issues near you.
 >- Filtering & Search.
 >- Admin view of database to assign issues, mark as resolved or not feasible and communicate back with user if needed.
-
-----
-
-**License:** [The MIT License](http://opensource.org/licenses/MIT)
