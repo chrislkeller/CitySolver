@@ -37,6 +37,8 @@ That last one is a biggie, hence:
 
 **Build Madison Presentation**
 
+![CitySolver](http://www.projects.chrislkeller.com/images/city_solver/city_solver_web.png)
+
 City Solver is a multi-device platform that allows everyday citizens to submit information about quality of life issues and problems they feel a municipality could or should address.
 
 Whether using a web app, a native Android app, or their laptop, desktop computer or tablet, city residents could send images and descriptions of these issues and opportunities.
@@ -49,6 +51,7 @@ A rating system is Phase One of furthering the platform to allow neighborhood re
 >- Thumbs up and thumbs down ranking of issues to gauge interest from others.
 >- Interface thats works on devices and browsers.
 >- Photo uploads work on Android and laptop, desktop web browsers. Photo uploads will be possible for users on iOS 6 Safari.
+>![CitySolver](http://www.projects.chrislkeller.com/images/city_solver/city_solver_mobile.png)
 >
 >**Wishlist**
 >
