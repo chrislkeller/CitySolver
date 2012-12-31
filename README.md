@@ -6,22 +6,29 @@ At the event, myself and Paul Klemstine and another took up the challenge of bui
 
 ![CitySolver](http://www.projects.chrislkeller.com/images/city_solver/city_solver_incident.png)
 
-The Build Madison pitch also positioned this project as something that would tie in with the city's existing "Report a Problem" infrastructure."
+The Build Madison pitch also positioned this project as something that would tie in with the city's existing "[Report a Problem](https://www.cityofmadison.com/reportaproblem/index.cfm?)" infrastructure.
 
 Paul and I developed had a good time hacking together a project we called [City Solver](https://github.com/chrislkeller/CitySolver)… It could aspire to be more -- a foundation for an open-source [See, Click, Fix](http://seeclickfix.com/) or a tool for smaller municipalities -- or less and left to lessons learned, of which there were many that apply to many things I find myself involved in on a daily basis.
 
-1. From different angles and perspectives keep asking, "Should this problem need to be solved?"
+1. From different angles and perspectives keep asking, "Is this a problem that needs to be solved?"
 
-  The original pitch wanted to tie an application into the city of Madison "Report a Problem" system. Needless to say that is an exponentially difficult task, and one not easily tackled by a hackathon team with 24 hours to work with. 
+	The original pitch wanted to tie an application into the city of Madison "Report a Problem" system. Needless to say that is an exponentially difficult task, and one not easily tackled by a hackathon team with 24 hours to work with. 
 	
 	And nevermind that the city of Madison has a comprehensive website that city residents can use to report specific issues and wasn't looking to extend the system in the manner the pitch stated.
+
+	Finally, I knew that Open Data was on the horizon in the city, as the city council had recently passed an ordinance that would let information start following for developers to use.
 	
-	But the project led to some great conversations with city officials and some insight into their future plans, some of which include mobile access and user feedback that we had in mind.
+	In the end, our project ended up with a couple prizes from the event, and I had the chance to meet with city officials on two occassions to discuss CitySolver courtesy of Eve Galanter,  a former city council member who pitched the project. 
+	
+	The conversation were fruitful as we were able to gain some insight into future city plans in this "Report a Problem" arena, some of which include mobile access and user feedback that we had in mind.
+	
+	And as soon as the Open Data starts following, real problems might be made available to develop around.
 
 2. Know who else has "solved" or attempted to "solve" this problem.
 
-	Had in been better in touch with Code For America, I would have known that developers have open-sourced similar applications, code that we could have built upon. 
-
+	Had in been better in touch with the work being done by Code For America, I would have known that developers have open-sourced similar [crowd-sourcing applications](http://brigade.codeforamerica.org/applications/1) and made code available that we could have built upon. 
+	
+	That said, as an intermediate beginner, building something myself was very fufilling and helped increase my confidence about what I was capable of learning.
 
 3. Spend more time on knowing the following: 
 
@@ -29,7 +36,11 @@ Paul and I developed had a good time hacking together a project we called [City 
 	- What are their needs?
 	- What can we do for them?
 
-	To this point, after presenting and thinking about this project as something "long-term" I was able to come up with the following:
+	Some advice from [Code For America's Kevin Curry](http://codeforamerica.org/author/kevin/) helped focus ideas on this project further, when he suggested the following after I posted to a Google Group:
+	
+	>The key element of your plan is residents working together to close their own tickets. That's significant. I think you should base everything off of that and make it totally obvious this is not a tool for reporting problems about the city that only the city can fix. 
+
+	To Kevin's point, after thinking more about this project as something "long-term" I was able to come up with the following:
 
 	- City residents have the power, know-how and -- I believe -- a want to work together to solve some common problems.
 	- That said, that power and ability is limited when a distinction is made between a resident's fence that is in disrepair, a street with potholes and a malfunctioning street light.
@@ -39,6 +50,8 @@ Paul and I developed had a good time hacking together a project we called [City 
 4. That last one is a biggie, hence even if everything at this point is coming up roses, would anyone use this thing?
 
 	There are privacy aspects to keep in mind, and very real hurdles to overcome when considering the idea of neighbors reporting on issues with neighbors. For instance, "Thank you, I'd like to repair my broken fence, but I'm without work and my wife is sick and I haven't made the time, so thank you for posting a photo of it online with your brutish comment."
+
+All that said, what follows are the bullet points from the BuildMadison presentation.
 
 ### Build Madison Presentation Bullet Points
 
